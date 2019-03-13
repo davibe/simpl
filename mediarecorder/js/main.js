@@ -110,8 +110,10 @@ function handleSourceOpen(event) {
   console.log('Source buffer: ', sourceBuffer);
 }
 
+var i = 0;
 function handleDataAvailable(event) {
-  if (event.data && event.data.size > 0) {
+  i += 1
+  if (event.data && event.data.size > 0 && (i % 2) == 0) {
     recordedBlobs.push(event.data);
   }
 }
