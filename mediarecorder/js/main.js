@@ -95,6 +95,7 @@ navigator.mediaDevices.getUserMedia(
 
 function successCallback(stream) {
   console.log('getUserMedia() got stream: ', stream);
+  console.log('Negotiated stream settings', stream.getVideoTracks()[0].getSettings())
   window.stream = stream;
   gumVideo.srcObject = stream;
 }
