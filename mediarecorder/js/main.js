@@ -72,7 +72,18 @@ if (!isSecureOrigin) {
 
 var constraints = {
   audio: true,
-  video: true
+  video: {
+      width: {
+          min: 320,
+          ideal: 320,
+          max: 1280
+      },
+      height: {
+          min: 240,
+          ideal: 240,
+          max: 720
+      }
+  }
 };
 
 navigator.mediaDevices.getUserMedia(
