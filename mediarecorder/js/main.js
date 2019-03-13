@@ -113,8 +113,10 @@ function handleSourceOpen(event) {
 var i = 0;
 function handleDataAvailable(event) {
   i += 1
-  if (event.data && event.data.size > 0 && (i % 2) == 0) {
+  if (event.data && event.data.size > 0 && (i % 30) == 0) {
     recordedBlobs.push(event.data);
+  } else {
+    console.log('skipping frame')
   }
 }
 
