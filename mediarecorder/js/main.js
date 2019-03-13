@@ -115,6 +115,7 @@ function handleDataAvailable(event) {
   i += 1
   if (event.data && event.data.size > 0 && (i % 30) == 0) {
     recordedBlobs.push(event.data);
+    console.log('saving frame')
   } else {
     console.log('skipping frame')
   }
